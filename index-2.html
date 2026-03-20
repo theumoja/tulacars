@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TULA CARS – Safari & Car Hire Kampala</title>
+    <!-- Favicon – replace with your own .ico or .png -->
+    <link rel="icon" type="image/ico" sizes="32x32" href="images/logo.ico">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #19180a;
+            background-color: #fafbf0;
+        }
+
+        :root {
+            --primary: #4E571F;
+            --primary-dark: #3a4117;
+            --accent-yellow: #f5e312;
+            --accent-gold: #e4d552;
+            --dark: #19180a;
+            --light-bg: #fafbf0;
+            --taupe: #9c9a81;
+            --light-accent: #f2e596;
+            --white: #ffffff;
+            --shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-yellow);
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--taupe);
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(78, 87, 31, 0.3);
+        }
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(78, 87, 31, 0.4);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.2s;
+            border: none;
+            font-size: 1.2rem;
+        }
+        .btn-wa:hover {
+            background: #20b859;
+            transform: scale(1.02);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            padding: 0.8rem 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo img {
+            max-height: 60px;
+            width: auto;
+            display: block;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-main {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+        .logo-main span {
+            color: var(--accent-yellow);
+            font-weight: 300;
+        }
+        .logo-tagline {
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            color: var(--taupe);
+            text-transform: uppercase;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--dark);
+            transition: 0.2s;
+        }
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        .contact-top {
+            background: var(--light-accent);
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .contact-top .container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+        }
+        .contact-top i {
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(105deg, var(--dark) 0%, var(--primary) 60%, rgba(78,87,31,0.8) 100%), url('images/tour.jpeg') right/cover no-repeat;
+            background-blend-mode: overlay;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        .hero-content {
+            max-width: 650px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .hero h1 span {
+            color: var(--accent-yellow);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin: 1.5rem 0 2rem;
+            opacity: 0.95;
+        }
+
+        /* Vehicles grid */
+        .vehicle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+        .vehicle-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.25s;
+            border: 1px solid var(--light-accent);
+        }
+        .vehicle-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(78,87,31,0.1);
+        }
+        .vehicle-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .vehicle-content {
+            padding: 1.8rem;
+        }
+        .vehicle-content h3 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-yellow);
+            margin: 0.5rem 0;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--taupe);
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1rem 0 1.5rem;
+        }
+        .feature-tag {
+            background: var(--light-accent);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        .feature-tag i {
+            color: var(--primary);
+            margin-right: 6px;
+        }
+
+        /* Why choose us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature-item {
+            background: var(--white);
+            padding: 2.2rem 1.8rem;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-bottom: 4px solid var(--accent-yellow);
+        }
+        .feature-item i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .feature-item h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+        }
+        .feature-item p {
+            color: var(--taupe);
+        }
+
+        /* Wildlife cards (new) */
+        .wildlife-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .wildlife-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+        }
+        .wildlife-card:hover {
+            transform: translateY(-6px);
+        }
+        .wildlife-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .wildlife-card-content {
+            padding: 1.5rem;
+        }
+        .wildlife-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .wildlife-card p {
+            color: var(--taupe);
+            font-size: 0.95rem;
+        }
+
+        /* Video section */
+        .video-section {
+            background: var(--light-accent);
+            border-radius: 40px;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        .video-container {
+ 	  	 position: relative;
+ 	  	 padding-bottom: 56.25%; /* 16:9 */
+ 	  	 height: 0;
+ 	  	 overflow: hidden;
+		}
+		.video-container iframe {
+ 		   position: absolute;
+ 		   top: 0;
+ 		   left: 0;
+ 		   width: 100%;
+ 		   height: 100%;
+		}
+        video {
+            width: 100%;
+            display: block;
+            background: black;
+        }
+
+        /* Popular routes (enhanced with images) */
+        .routes-grid-enhanced {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .route-card-enhanced {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+        }
+        .route-card-enhanced:hover {
+            transform: translateY(-5px);
+        }
+        .route-card-enhanced img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+        .route-card-enhanced .route-info {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .route-card-enhanced .route-info i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        .route-card-enhanced .route-info span {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        /* Booking highlight */
+        .booking-block {
+            background: var(--primary);
+            color: white;
+            border-radius: 60px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        .booking-block h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent-yellow);
+        }
+        .booking-block .btn-wa {
+            font-size: 1.6rem;
+            padding: 1rem 3.5rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Contact section */
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 40px;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+        .contact-info i {
+            color: var(--primary);
+            width: 30px;
+            font-size: 1.2rem;
+        }
+        .contact-info p {
+            margin: 1.2rem 0;
+            font-size: 1.1rem;
+        }
+        .contact-info strong {
+            color: var(--primary);
+        }
+        
+        .reviews {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 30px;
+            border: 1px solid var(--light-accent);
+        }
+        .review-item {
+            font-style: italic;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px dashed var(--taupe);
+        }
+        .review-item span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #e0e0d1;
+            padding: 2.5rem 0;
+            margin-top: 5rem;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-content h3 {
+            color: var(--accent-yellow);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 8px 16px rgba(37, 211, 102, 0.3);
+            transition: 0.2s;
+            z-index: 100;
+        }
+        .whatsapp-float:hover {
+            background: #20b859;
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 90px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                padding: 2rem 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                transition: 0.3s;
+                gap: 1.5rem;
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .hero {
+                background-position: 70% center;
+            }
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            .contact-wrap {
+                grid-template-columns: 1fr;
+            }
+            .contact-top .container {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .booking-block h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-top">
+        <div class="container">
+            <span><i class="fas fa-phone-alt"></i> +256 781 506025</span>
+            <span><i class="fab fa-whatsapp"></i> +256 781 506025 </span>
+        </div>
+    </div>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="TULA CARS logo">
+                <div class="logo-text">
+                    <div class="logo-main">TULA  <span>CARS</span></div>
+                    <div class="logo-tagline">Travel your way</div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#vehicles">Our Safari Cars</a></li>
+                <li><a href="#wildlife">Wildlife</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#book" class="btn" style="padding:0.5rem 1.5rem;">Book Now</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Reliable <span>Safari Car Hire</span> in Kampala</h1>
+            <p>Comfortable, well-maintained 4x4 vehicles with air conditioning. Optional driver. Travel Your Way.</p>
+            <a href="#vehicles" class="btn">View our vehicles →</a>
+        </div>
+    </section>
+
+    <!-- VEHICLES -->
+    <section id="vehicles" style="padding: 5rem 0;">
+        <div class="container">
+            <h2 class="section-title">Our Safari Vehicles</h2>
+            <p class="section-sub">Perfect for game drives, city rides, and upcountry travel</p>
+            <div class="vehicle-grid">
+                <div class="vehicle-card">
+                    <img src="images/land2.jpg" alt="Toyota Land Cruiser">
+                    <div class="vehicle-content">
+                        <h3>Toyota Land Cruiser</h3>
+                        <div class="price">UGX 350,000 <small>/ day</small></div>
+                        <div class="features">
+                            <span class="feature-tag"><i class="fas fa-car"></i> 4x4</span>
+                            <span class="feature-tag"><i class="fas fa-wind"></i> AC</span>
+                            <span class="feature-tag"><i class="fas fa-user"></i> Driver optional</span>
+                            <span class="feature-tag"><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span class="feature-tag"><i class="fas fa-camera"></i> Pop-up roof</span>
+                        </div>
+                        <p>Spacious 7-seater, ideal for safaris and off-road. Pop-up roof for game viewing.</p>
+                        <a href="https://wa.me/256781 506025?text=Hello%20TULA%20CARS%2C%20I'm%20interested%20in%20the%20Toyota%20Land%20Cruiser%20for%20UGX%20350k%2Fday" target="_blank" class="btn-wa" style="font-size:1rem; padding:0.7rem 1.5rem;"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="vehicle-card">
+                    <img src="images/rover1.jpg" alt="Land Rover Discovery">
+                    <div class="vehicle-content">
+                        <h3>Land Rover Discovery</h3>
+                        <div class="price">UGX 350,000 <small>/ day</small></div>
+                        <div class="features">
+                            <span class="feature-tag"><i class="fas fa-car"></i> 4x4</span>
+                            <span class="feature-tag"><i class="fas fa-wind"></i> AC</span>
+                            <span class="feature-tag"><i class="fas fa-user"></i> Driver optional</span>
+                            <span class="feature-tag"><i class="fas fa-snowflake"></i> Cooler box</span>
+                            <span class="feature-tag"><i class="fas fa-couch"></i> Leather seats</span>
+                        </div>
+                        <p>Luxury off-road SUV, leather seats, great for both city and wilderness.</p>
+                        <a href="https://wa.me/256781 506025?text=Hello%20TULA%20CARS%2C%20I'm%20interested%20in%20the%20Land%20Rover%20Discovery%20for%20UGX%20350k%2Fday" target="_blank" class="btn-wa" style="font-size:1rem; padding:0.7rem 1.5rem;"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:1.5rem; background: var(--light-accent); padding:1rem; border-radius:60px;"><i class="fas fa-shield-alt" style="color:var(--primary);"></i> All prices include comprehensive insurance and 24/7 roadside assistance. Driver guide available at UGX 50,000/day.</p>
+        </div>
+    </section>
+
+    <!-- NEW: Wildlife Encounters (visual cards per park) -->
+    <section id="wildlife" style="padding: 3rem 0;">
+        <div class="container">
+            <h2 class="section-title">Wildlife Encounters in Uganda's Parks</h2>
+            <p class="section-sub">Spot these iconic animals in their natural habitat with our safari vehicles</p>
+            <div class="wildlife-grid">
+                <div class="wildlife-card">
+                    <img src="images/gorilla.jpeg" alt="Mountain Gorilla">
+                    <div class="wildlife-card-content">
+                        <h3>Mountain Gorilla</h3>
+                        <p>Bwindi Impenetrable Forest – a once‑in‑a‑lifetime trek.</p>
+                    </div>
+                </div>
+                <div class="wildlife-card">
+                    <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="African Elephant">
+                    <div class="wildlife-card-content">
+                        <h3>African Elephant</h3>
+                        <p>Murchison Falls & Queen Elizabeth – huge herds by the Nile.</p>
+                    </div>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/lions.jpg" alt="Tree-climbing Lion">
+                    <div class="wildlife-card-content">
+                        <h3>Tree‑climbing Lion</h3>
+                        <p>Unique to Queen Elizabeth's Ishasha sector.</p>
+                    </div>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/zebra.jpeg" alt="Zebra">
+                    <div class="wildlife-card-content">
+                        <h3>Zebra & Giraffe</h3>
+                        <p>Kidepo Valley – vast savannahs with abundant wildlife.</p>
+                    </div>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/chimp.jpeg" alt="Chimpanzee">
+                    <div class="wildlife-card-content">
+                        <h3>Chimpanzee</h3>
+                        <p>Kibale Forest – the primate capital of East Africa.</p>
+                    </div>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/hippo.jpeg" alt="Hippo">
+                    <div class="wildlife-card-content">
+                        <h3>Hippo & Crocodile</h3>
+                        <p>Kazinga Channel – boat cruises with hundreds of hippos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Video Section (playable HTML5 video) -->
+   <div class="container">
+    <div class="video-section">
+        <h2 class="section-title" style="color: var(--dark);">Experience the Wild</h2>
+        <p style="color: var(--taupe); margin-bottom: 1rem;">Watch Uganda's breathtaking landscapes and wildlife in action</p>
+        <div class="video-container">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/xk55iK2qpcI" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">🎥 A glimpse of Uganda's wildlife – source: YouTube</p>
+    </div>
+</div>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why" style="padding: 2rem 0 4rem;">
+        <div class="container">
+            <h2 class="section-title">Why TULA CARS?</h2>
+            <p class="section-sub">We make your journey smooth and memorable</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-wrench"></i>
+                    <h4>Well-Maintained Fleet</h4>
+                    <p>Every vehicle is serviced before each trip. Clean, safe, and ready for adventure.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>Optional Driver Guide</h4>
+                    <p>Knowledgeable driver who knows the best routes, wildlife spots, and local culture.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <h4>24/7 Support</h4>
+                    <p>We're always a call away. Emergency roadside assistance and quick resolution.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-map-signs"></i>
+                    <h4>Custom Itineraries</h4>
+                    <p>We help plan your safari – from Murchison to Bwindi, we've got the wheels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENHANCED POPULAR ROUTES with images -->
+    <section style="padding: 2rem 0 3rem;">
+        <div class="container">
+            <h3 class="section-title" style="font-size:2rem;">Popular Safari Routes</h3>
+            <p class="section-sub">Top destinations we help you explore</p>
+            <div class="routes-grid-enhanced">
+                <div class="route-card-enhanced">
+                    <img src="images/1.jpeg" alt="Murchison Falls">
+                    <div class="route-info"><i class="fas fa-water"></i><span>Murchison Falls</span></div>
+                </div>
+                <div class="route-card-enhanced">
+                    <img src="images/bwindi.jpeg" alt="Bwindi Gorillas">
+                    <div class="route-info"><i class="fas fa-tree"></i><span>Bwindi Gorillas</span></div>
+                </div>
+                <div class="route-card-enhanced">
+                    <img src="images/queen.jpeg" alt="Queen Elizabeth">
+                    <div class="route-info"><i class="fas fa-savannah"></i><span>Queen Elizabeth</span></div>
+                </div>
+                <div class="route-card-enhanced">
+                    <img src="images/rwen.jpeg" alt="Rwenzori">
+                    <div class="route-info"><i class="fas fa-mountain"></i><span>Rwenzori Trek</span></div>
+                </div>
+                <div class="route-card-enhanced">
+                    <img src="images/nile.jpeg" alt="Jinja Nile">
+                    <div class="route-info"><i class="fas fa-dove"></i><span>Jinja Nile</span></div>
+                </div>
+                <div class="route-card-enhanced">
+                    <img src="images/kidepo.jpeg" alt="Kidepo">
+                    <div class="route-info"><i class="fas fa-paw"></i><span>Kidepo Valley</span></div>
+                </div>
+            </div>
+            <p style="text-align:center; color: var(--taupe);">Ask us about combination packages and multi-day hire discounts.</p>
+        </div>
+    </section>
+
+    <!-- BOOKING CTA -->
+    <div class="container" id="book">
+        <div class="booking-block">
+            <h2>📲 Ready to hit the road?</h2>
+            <p style="font-size:1.3rem; margin-bottom:0.5rem;">Click below to book instantly via WhatsApp – we reply within minutes.</p>
+            <a href="https://wa.me/256781 506025?text=Hello%20TULA%20CARS%20!%20I%20would%20like%20to%20book%20a%20safari%20car%20for%20..." target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Book Now on WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact" style="padding: 2rem 0 5rem;">
+        <div class="container">
+            <h2 class="section-title">Contact & Location</h2>
+            <div class="contact-wrap">
+                <div class="contact-info">
+    <h3 style="color:var(--primary); margin-bottom:1.5rem;">Get in touch</h3>
+    <p><i class="fas fa-phone-alt"></i> <strong>Call / SMS:</strong> +256 781 506025</p>
+    <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> +256 781 506025 </p>
+    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> zantamore@gmail.com</p>
+    <p><i class="fas fa-map-marker-alt"></i> <strong>Office:</strong> Wandegye Division, Kampala, Uganda</p>
+
+    <div class="map-placeholder" style="padding:0; overflow:hidden;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.743122968948!2d32.58359511541528!3d0.31912916407695925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbbd1a5b18e0b%3A0x4b3d2e0b2c6b2b0!2sWandegeya%2C%20Kampala!5e0!3m2!1sen!2sug!4v1647856789012!5m2!1sen!2sug" 
+            width="100%" 
+            height="200" 
+            style="border:0; border-radius:24px;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <p style="margin-top:1rem; font-size:0.95rem;"><i class="fas fa-clock" style="color:var(--primary);"></i> Mon–Sat 8:00–18:00, Sun by appointment</p>
+</div>
+
+
+
+
+                <div class="reviews">
+                    <h3 style="color:var(--primary); margin-bottom:1.5rem;"><i class="fas fa-star" style="color: var(--accent-yellow);"></i> Customer reviews</h3>
+                    <div class="review-item">“Very reliable car, perfect for our Murchison trip. Driver was punctual and professional.” <br><span>— Sarah K.</span></div>
+                    <div class="review-item">“Smooth booking via WhatsApp, vehicle was clean and AC worked great. Will use again!” <br><span>— David O.</span></div>
+                    <div class="review-item">“They helped us arrange a last-minute Bwindi trip – the Land Cruiser was perfect.” <br><span>— James M.</span></div>
+                    <div class="review-item"><i class="fas fa-plus-circle" style="color:var(--taupe);"></i> More reviews coming – your experience matters!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/256781 506025?text=Hello%20TULA%20CARS%20!%20I%20need%20a%20safari%20car%20in%20Kampala" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>TULA CARS</h3>
+                <p>Travel Your Way © 2026</p>
+                <p style="font-size:0.85rem; color:#aaa;">tulacarsuganda.com</p>
+            </div>
+            <div style="text-align:right;">
+                <p><i class="fas fa-phone"></i> +256 781 506025</p>
+                <p>Wandegye, Kampala</p>
+                <p style="font-size:0.85rem;">Office hours: Mon–Sat</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+    <style>
+    .map-placeholder {
+        height: 200px;
+        border-radius: 24px;
+        margin-top: 1rem;
+        border: 2px solid var(--light-accent);
+    }
+</style>
+</body>
+</html>
