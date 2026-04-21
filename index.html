@@ -190,7 +190,7 @@
         }
         
         .hero {
-            background: linear-gradient(105deg, var(--dark) 0%, var(--primary) 60%, rgba(78,87,31,0.8) 100%), url('img/1a.jpg') right/cover no-repeat;
+            background: linear-gradient(105deg, var(--dark) 0%, var(--primary) 60%, rgba(78,87,31,0.8) 100%), url('img/1/2.jpg') right/cover no-repeat;
             background-blend-mode: overlay;
             min-height: 550px;
             display: flex;
@@ -529,7 +529,27 @@
             color: var(--primary);
             font-weight: 700;
         }
-
+        .btn {
+    background: #e4d552;
+    color: #4E571F;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.btn:hover:not(:disabled) {
+    background: #c9b93e;
+    transform: translateY(-2px);
+}
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
         /* Footer */
         footer {
             background: var(--dark);
@@ -663,13 +683,27 @@
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <h1>Reliable <span>Safari Car Hire</span> in Kampala</h1>
-            <p>Comfortable, well-maintained 4x4 vehicles with air conditioning. Optional driver. Travel Your Way.</p>
-            <a href="#vehicles" class="btn">View our vehicles →</a>
+   <section id="home" class="hero">
+    <div class="container hero-content">
+        <h1>TULA CARS LTD</h1>
+        <p class="hero-tagline">Travel your way ✨️🇺🇬 🇷🇼</p>
+        <p class="hero-description">A trusted Safari Car Hire company based in Kampala, Uganda, offering reliable and affordable 4x4 vehicle rentals for both local and international clients. We specialize in comfortable safari vehicles perfect for trips to Uganda and Rwanda's top destinations.</p>
+        
+        <ul class="hero-services">
+            <li>🏞️ National Parks</li>
+            <li>🚴 Cycling trips</li>
+            <li>🛬 Airport pickup</li>
+            <li>🚗 Weekend road trips</li>
+            <li>💍 Wedding and VIP transport</li>
+        </ul>
+
+        <div class="hero-offers">
+            <p><strong>Free with every rental:</strong> 🧊 Cooler box · 📶 WiFi Router · 🧑‍✈️ Professional Guide Driver · 🙏 Big Trust</p>
         </div>
-    </section>
+
+        <a href="#vehicles" class="btn">View our safari vehicles →</a>
+    </div>
+</section>
 
     <!-- VEHICLES -->
     <section id="vehicles" style="padding: 5rem 0;">
@@ -710,10 +744,10 @@
                     </div>
                 </div>
                  <div class="vehicle-card">
-                    <img src="img/3a.jpg" alt="Toyota Land Cruiser Safari" loading="lazy">
+                    <img src="img/1/safari.jpg" alt="Toyota Land Cruiser Safari" loading="lazy">
                     <div class="vehicle-content">
-                        <h3>Toyota  Rav4</h3>
-                        <div class="price">$50<small>/ day</small></div>
+                        <h3>Safari Van</h3>
+                        <div class="price">$100<small>/ day</small></div>
                         <div class="features">
                             <span class="feature-tag"><i class="fas fa-car"></i> 4x4</span>
                             <span class="feature-tag"><i class="fas fa-wind"></i> AC</span>
@@ -721,7 +755,7 @@
                             <span class="feature-tag"><i class="fas fa-gas-pump"></i> Diesel</span>
                             <span class="feature-tag"><i class="fas fa-camera"></i> Pop-up roof</span>
                         </div>
-                        <p>Spacious 4-seater, ideal for safaris and off-road. </p>
+                        <p>Spacious 10 seater, ideal for safaris and off-road. </p>
                         <a href="https://wa.me/256782200051?text=Hello%20TULA%20CARS%2C%20I'm%20interested%20in%20the%20Toyota%20Land%20Cruiser%20for%20UGX%20350k%2Fday" target="_blank" class="btn-wa" style="font-size:1rem; padding:0.7rem 1.5rem;"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
                     </div>
                 </div>
@@ -758,7 +792,10 @@
                     </div>
                 </div>
             </div>
-            <p style="text-align:center; margin-top:1.5rem; background: var(--light-accent); padding:1rem; border-radius:60px;"><i class="fas fa-shield-alt" style="color:var(--primary);"></i> All prices include comprehensive insurance and 24/7 roadside assistance. Driver guide available at $50 /day.</p>
+            <p style="text-align:center; margin-top:1.5rem; background: var(--light-accent); padding:1rem; border-radius:60px;">
+    <i class="fas fa-shield-alt" style="color:var(--primary);"></i> 
+    Free inclusions with every rental: 🧊 Cooler box · 📶 WiFi Router · 🧑‍✈️ Professional Guide Driver  · 🙏 Big Trust
+</p>
         </div>
     </section>
 
@@ -835,14 +872,19 @@
 
     <!-- NEW ADS SECTION: TRAVEL GALLERY (15 images) -->
     <section id="gallery" class="container" style="margin: 2rem auto;">
-        <div class="travel-gallery">
-            <h2 class="section-title">🇺🇬 Uganda Travel Gallery</h2>
-            <p class="section-sub">Explore the beauty of the Pearl of Africa through our lens</p>
-            <div class="gallery-grid" id="dynamicGallery">
-                <!-- 15 images will be injected via JS to ensure clean paths images/1.jpg to images/15.jpg -->
-            </div>
+    <div class="travel-gallery">
+        <h2 class="section-title">Our Own Travel Gallery</h2>
+        <p class="section-sub">Explore the beauty of the Pearl of Africa through our lens</p>
+        <div class="gallery-grid" id="dynamicGallery">
+            <!-- Images will be injected dynamically -->
         </div>
-    </section>
+        <!-- Buttons for load more / load all -->
+        <div class="gallery-controls" style="text-align: center; margin-top: 2rem;">
+            <button id="loadMore6" class="btn">📸 Load Next 6</button>
+            <button id="loadAll" class="btn">🌍 Load All</button>
+        </div>
+    </div>
+</section>
 
     <!-- WHY CHOOSE US -->
     <section id="why" style="padding: 2rem 0 4rem;">
@@ -865,10 +907,13 @@
             <p class="section-sub">Top destinations we help you explore</p>
             <div class="routes-grid-enhanced">
                 <div class="route-card-enhanced"><img src="img/equator.jpg" alt="Murchison Falls" loading="lazy"><div class="route-info"><i class="fas fa-water"></i><span>Uganda Equator</span></div></div>
+                  <div class="route-card-enhanced"><img src="img/crane.jpg" alt="Murchison Falls" loading="lazy"><div class="route-info"><i class="fas fa-flag"></i><span>Uganda Cranes</span></div></div>
                 <div class="route-card-enhanced"><img src="img/Baboon.jpg" alt="Bwindi Primates" loading="lazy"><div class="route-info"><i class="fas fa-tree"></i><span>Bwindi Primates</span></div></div>
                 <div class="route-card-enhanced"><img src="img/buffalo.jpg" alt="Queen Elizabeth" loading="lazy"><div class="route-info"><i class="fas fa-savannah"></i><span>Queen Elizabeth</span></div></div>
-                <div class="route-card-enhanced"><img src="img/rwen.jpg" alt="Kisoro" loading="lazy"><div class="route-info"><i class="fas fa-mountain"></i><span>Kisoro </span></div></div>
+                <div class="route-card-enhanced"><img src="img/1/kisoro.jpg" alt="Kisoro" loading="lazy"><div class="route-info"><i class="fas fa-mountain"></i><span>Kisoro </span></div></div>
                 <div class="route-card-enhanced"><img src="img/hip.jpg" alt="Jinja Nile" loading="lazy"><div class="route-info"><i class="fas fa-dove"></i><span>Kazinga channel</span></div></div>
+                 <div class="route-card-enhanced"><img src="img/1/cycling.jpg" alt="Jinja Nile" loading="lazy"><div class="route-info"><i class="fas fa-dove"></i><span>Cycling trips</span></div></div>
+                  <div class="route-card-enhanced"><img src="img/1/sipi.jpg" alt="Jinja Nile" loading="lazy"><div class="route-info"><i class="fas fa-dove"></i><span>Sipi Falls</span></div></div>
                 <div class="route-card-enhanced"><img src="img/antelope.jpg" alt="Kidepo" loading="lazy"><div class="route-info"><i class="fas fa-paw"></i><span>Lake Mburo </span></div></div>
             </div>
             <p style="text-align:center; color: var(--taupe);">Ask us about combination packages and multi-day hire discounts.</p>
@@ -950,28 +995,80 @@
         });
 
         // Generate 15 travel gallery images: images/1.jpg to images/15.jpg
+        (function() {
         const galleryContainer = document.getElementById('dynamicGallery');
-        if(galleryContainer) {
-            for(let i = 1; i <= 15; i++) {
-                const imgPath = `img/${i}.jpg`;
-                const div = document.createElement('div');
-                div.className = 'gallery-item';
-                const img = document.createElement('img');
-                img.src = imgPath;
-                img.alt = `Uganda Safari Travel ${i}`;
-                img.loading = 'lazy';
-                img.onerror = function() {
-                    this.onerror = null;
-                    this.src = 'https://placehold.co/600x400/e4d552/4E571F?text=Image+'+i;
-                };
-                const caption = document.createElement('div');
-                caption.className = 'gallery-caption';
-                caption.innerText = `Explore Uganda 📍`;
-                div.appendChild(img);
-                div.appendChild(caption);
-                galleryContainer.appendChild(div);
-            }
+        if (!galleryContainer) return;
+
+    const TOTAL_IMAGES = 30;                // as per your loop
+    const BATCH_SIZE = 6;
+    let currentIndex = 0;
+
+    const loadMoreBtn = document.getElementById('loadMore6');
+    const loadAllBtn = document.getElementById('loadAll');
+
+    // Helper to create a single gallery item
+    function createGalleryItem(index) {
+        const imgPath = `img/${index}.jpg`;
+        const div = document.createElement('div');
+        div.className = 'gallery-item';
+
+        const img = document.createElement('img');
+        img.src = imgPath;
+        img.alt = `Uganda Safari Travel ${index}`;
+        img.loading = 'lazy';
+        img.onerror = function() {
+            this.onerror = null;
+            this.src = `https://placehold.co/600x400/e4d552/4E571F?text=Image+${index}`;
+        };
+
+        const caption = document.createElement('div');
+        caption.className = 'gallery-caption';
+        caption.innerText = 'Explore Uganda 📍';
+
+        div.appendChild(img);
+        div.appendChild(caption);
+        return div;
+    }
+
+    // Load a specified number of images (starting from currentIndex)
+    function loadImages(count) {
+        const remaining = TOTAL_IMAGES - currentIndex;
+        const itemsToLoad = Math.min(count, remaining);
+        if (itemsToLoad <= 0) {
+            disableButtons();
+            return;
         }
+
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < itemsToLoad; i++) {
+            const item = createGalleryItem(currentIndex + 1); // 1‑based numbering
+            fragment.appendChild(item);
+            currentIndex++;
+        }
+        galleryContainer.appendChild(fragment);
+
+        // Disable buttons if all images are loaded
+        if (currentIndex >= TOTAL_IMAGES) {
+            disableButtons();
+        }
+    }
+
+    function disableButtons() {
+        loadMoreBtn.disabled = true;
+        loadAllBtn.disabled = true;
+        loadMoreBtn.style.opacity = '0.6';
+        loadAllBtn.style.opacity = '0.6';
+        loadMoreBtn.style.cursor = 'not-allowed';
+        loadAllBtn.style.cursor = 'not-allowed';
+    }
+
+    // Initial load: first 6 images
+    loadImages(BATCH_SIZE);
+
+    // Event listeners
+    loadMoreBtn.addEventListener('click', () => loadImages(BATCH_SIZE));
+    loadAllBtn.addEventListener('click', () => loadImages(TOTAL_IMAGES - currentIndex));
+})();
     </script>
 </body>
 </html>
