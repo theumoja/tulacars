@@ -190,16 +190,45 @@
         }
         
         .hero {
-            background: linear-gradient(105deg, var(--dark) 0%, var(--primary) 60%, rgba(78,87,31,0.8) 100%), url('img/1/1b.jpg') right/cover no-repeat;
+        position: relative; /* already needed if not set */
+        background: linear-gradient(105deg, 
+        rgba(0,0,0,0.6) 0%, 
+        rgba(0,0,0,0.3) 60%, 
+        rgba(78,87,31,0.5) 100%
+    ), url('img/1/1b.jpg') right/cover no-repeat;
             background-blend-mode: overlay;
-            max-height: 500px;
+            max-height: 650px;
             display: flex;
             align-items: center;
             color: white;
         }
+        
+
+/* New overlay to darken the entire hero area */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* adjust opacity for desired darkness */
+    pointer-events: none; /* lets clicks pass through */
+    z-index: 1;
+}
+
+/* Ensure content sits above the new overlay */
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1, .hero p {
+    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
 
         .hero-content {
-            max-width: 650px;
+            max-width: 750px;
         }
         .hero h1 {
             font-size: 3.5rem;
